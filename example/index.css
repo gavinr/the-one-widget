@@ -1,0 +1,27 @@
+html,
+body,
+#root,
+.App,
+.MapComponent {
+  height: 100%;
+  width: 100%;
+}
+body {
+  margin: 0;
+}
+
+#root,
+.App {
+  position: relative;
+}
+
+.wrapperComponent {
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  position: absolute;
+  background-color: white;
+  border: 1px solid gray;
+  width: 300px;
+  min-height: 400px;
+}
