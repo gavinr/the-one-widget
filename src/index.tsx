@@ -1,15 +1,28 @@
+/// <reference types="@types/arcgis-js-api" />
 import * as React from 'react';
 import { useEffect, useState, useRef } from 'react';
 
-export default ({ mapView, modules, featureLayerId }) => {
+export default ({
+  mapView,
+  modules,
+  featureLayerId,
+}: {
+  mapView: __esri.MapView;
+  modules: any[];
+  featureLayerId: string;
+}) => {
   const sketchRef = useRef<HTMLDivElement>(null);
   const [intersectingFeatureCount, setIntersectingFeatureCount] = useState<
     number
   >(0);
 
-  const drawCreateHandler = evt => {
+  const drawCreateHandler: __esri.SketchCreateEventHandler = (
+    evt: __esri.SketchCreateEvent
+  ) => {
     // Find the feature layer to use:
-    const fl = mapView.map.layers.find(l => l.id === featureLayerId);
+    const fl: __esri.FeatureLayer = mapView.map.layers.find(
+      l => l.id === featureLayerId
+    ) as __esri.FeatureLayer;
 
     // The first time, clear out the grapics in the layer
     if (evt.state === 'start') {
@@ -39,7 +52,7 @@ export default ({ mapView, modules, featureLayerId }) => {
       const [Sketch] = modules;
 
       // Create the sketch widget:
-      const sketch = new Sketch({
+      const sketch: __esri.Sketch = new Sketch({
         layer: mapView.graphics,
         view: mapView,
         availableCreateTools: ['polygon', 'rectangle', 'circle'],
