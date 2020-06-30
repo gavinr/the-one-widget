@@ -19,7 +19,7 @@ export default function Map({ viewReady }) {
     if (evt === true) {
       // View is ready.
 
-      // Add a FeatureLayer to snap to in GoodBoundaries.js
+      // Add a FeatureLayer
       const [FeatureLayer] = await loadModules(['esri/layers/FeatureLayer']);
 
       // If your layer is private, uncomment this section (from
@@ -34,7 +34,7 @@ export default function Map({ viewReady }) {
         portalItem: {
           id: '6996f03a1b364dbab4008d99380370ed',
         },
-        id: 'testLayerId'
+        id: 'testLayerId',
       });
 
       view.map.layers.add(testingFeatureLayer);

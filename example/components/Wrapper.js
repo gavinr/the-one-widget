@@ -9,10 +9,7 @@ export default function Wrapper({ mapView }) {
 
   useEffect(() => {
     // this is where we use esri-loader to pass into MyWidget as PROPS any JS API Module we need
-    loadModules([
-      'esri/widgets/Sketch',
-      'esri/geometry/geometryEngine'
-    ]).then(modules => {
+    loadModules(['esri/widgets/Sketch']).then(modules => {
       setModules(modules);
     });
   }, []);
