@@ -18,15 +18,16 @@ jobs:
         with:
           node-version: '12.x'
       - run: npm install
-      - name: npm install
+      - run: npm run build
+      - name: npm install example
         working-directory: example
         run: npm install
-      - name: run build
+      - name: run build example
         working-directory: example
         run: npm run build
-      - name: Build and Deploy
+      - name: gh-pages Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.TOW_GH_PAT }}
           BRANCH: gh-pages
-          FOLDER: example
+          FOLDER: example/dist
