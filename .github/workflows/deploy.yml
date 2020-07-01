@@ -24,7 +24,7 @@ jobs:
         run: npm install
       - name: run build example
         working-directory: example
-        run: npm run build
+        run: npm run build-prod
       - name: gh-pages Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
