@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "build-prod": "parcel build index.html --public-url the-one-widget"
+    "build-prod": "parcel build index.html --public-url ."
   },
   "dependencies": {
     "esri-loader": "^2.14.0",
